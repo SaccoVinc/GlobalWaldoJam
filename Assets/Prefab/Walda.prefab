@@ -347,9 +347,8 @@ MonoBehaviour:
   BodySprites:
   - {fileID: 5744563787780099260, guid: 9dec22f6297e5304a98cd0ddf6103a7b, type: 3}
   - {fileID: 4784103628613621539, guid: f6ad2aadca79626429882d9768122572, type: 3}
-  customMaterial: {fileID: 2100000, guid: 5ac12fb18dd16944396110abfef3dce6, type: 2}
-  AvailableColorsCloth: []
-  AvailableColorsFace: []
+  AvailableColors:
+  - {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &10258553902501114
 SpriteRenderer:
   m_ObjectHideFlags: 0
