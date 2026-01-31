@@ -5,11 +5,10 @@ using TMPro;
 public class CountdownTimer : MonoBehaviour
 {
     [Header("Impostazioni Timer")]
-    [SerializeField] private float tempoIniziale = 60f;
+    [SerializeField] private float tempoIniziale = 100f;
 
     [Header("Riferimenti UI")]
     [SerializeField] private TextMeshProUGUI timerText;
-    [SerializeField] private GameObject gameOverPanel;
 
     [Header("Colori")]
     [SerializeField] private Color coloreNormale = Color.white;
@@ -17,13 +16,11 @@ public class CountdownTimer : MonoBehaviour
 
     private float tempoRimanente;
     private bool timerAttivo = true;
+    public TriggerCamera triggerCamera;
 
     void Start()
     {
         tempoRimanente = tempoIniziale;
-
-        if (gameOverPanel != null)
-            gameOverPanel.SetActive(false);
     }
 
     void Update()
@@ -36,7 +33,7 @@ public class CountdownTimer : MonoBehaviour
         {
             tempoRimanente = 0f;
             timerAttivo = false;
-            MostraGameOver();
+            triggerCamera.Lose();
         }
 
         AggiornaDisplay();
@@ -46,37 +43,22 @@ public class CountdownTimer : MonoBehaviour
     {
         if (timerText == null) return;
 
-        if (tempoRimanente <= 5f)
+        if (tempoRimanente <= 10f)
         {
-            // Ultimi 5 secondi: rosso con decimali
             timerText.color = coloreUrgente;
             timerText.text = tempoRimanente.ToString("F2");
         }
         else
         {
-            // Tempo normale: bianco, solo interi
             timerText.color = coloreNormale;
             timerText.text = Mathf.CeilToInt(tempoRimanente).ToString();
         }
     }
 
-    void MostraGameOver()
-    {
-        if (gameOverPanel != null)
-            gameOverPanel.SetActive(true);
-
-        if (timerText != null)
-            timerText.text = "0.00";
-    }
-
-    // Metodi pubblici per controllo esterno
     public void RiavviaTimer()
     {
         tempoRimanente = tempoIniziale;
         timerAttivo = true;
-
-        if (gameOverPanel != null)
-            gameOverPanel.SetActive(false);
     }
 
     public void PausaTimer()
@@ -94,5 +76,10 @@ public class CountdownTimer : MonoBehaviour
     {
         tempoIniziale = nuovoTempo;
         tempoRimanente = nuovoTempo;
+    }
+
+    public void PenalitaTempo()
+    {
+        tempoRimanente = tempoRimanente - 5f;
     }
 }
