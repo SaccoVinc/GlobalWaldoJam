@@ -404,9 +404,53 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 225610928572054388, guid: 2810e333486614c41a60781e4b5b8fce, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 57.8915
+      objectReference: {fileID: 0}
+    - target: {fileID: 225610928572054388, guid: 2810e333486614c41a60781e4b5b8fce, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 36.6643
+      objectReference: {fileID: 0}
+    - target: {fileID: 225610928572054388, guid: 2810e333486614c41a60781e4b5b8fce, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 368.19092
+      objectReference: {fileID: 0}
+    - target: {fileID: 225610928572054388, guid: 2810e333486614c41a60781e4b5b8fce, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 202.60532
+      objectReference: {fileID: 0}
     - target: {fileID: 882022243835449657, guid: 2810e333486614c41a60781e4b5b8fce, type: 3}
       propertyPath: m_Name
       value: CountdownUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 3765277514192749623, guid: 2810e333486614c41a60781e4b5b8fce, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3765277514192749623, guid: 2810e333486614c41a60781e4b5b8fce, type: 3}
+      propertyPath: m_margin.x
+      value: 756.0226
+      objectReference: {fileID: 0}
+    - target: {fileID: 3765277514192749623, guid: 2810e333486614c41a60781e4b5b8fce, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: c80654f00aee5814fb730bbe26ce13ac, type: 2}
+    - target: {fileID: 3765277514192749623, guid: 2810e333486614c41a60781e4b5b8fce, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3765277514192749623, guid: 2810e333486614c41a60781e4b5b8fce, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1472904862664311393, guid: c80654f00aee5814fb730bbe26ce13ac, type: 2}
+    - target: {fileID: 3765277514192749623, guid: 2810e333486614c41a60781e4b5b8fce, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3765277514192749623, guid: 2810e333486614c41a60781e4b5b8fce, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4346000777307606027, guid: 2810e333486614c41a60781e4b5b8fce, type: 3}
       propertyPath: m_Pivot.x
@@ -487,6 +531,10 @@ PrefabInstance:
     - target: {fileID: 4346000777307606027, guid: 2810e333486614c41a60781e4b5b8fce, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6214384352429983322, guid: 2810e333486614c41a60781e4b5b8fce, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -400
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
