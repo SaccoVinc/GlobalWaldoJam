@@ -39,6 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Fotocamera
+    uniqueID: 2800638279
+    locked: 0
   - name: Personaggio
     uniqueID: 4060371811
     locked: 0

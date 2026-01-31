@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class TriggerCamera : MonoBehaviour
 {
+    public GameManager manager;
     public CountdownTimer countdownTimer;
     private bool targetInside = false;
     void OnTriggerEnter2D(Collider2D other)
@@ -28,18 +29,27 @@ public class TriggerCamera : MonoBehaviour
         }
         else 
         { 
-            Lose(); 
+            Sbagliato(); 
         }
     }
 
     public void Win()
     {
         Debug.Log("Hai vinto!");
+        manager.WinGame();
+
+    }
+
+    public void Sbagliato()
+    {
+        countdownTimer.PenalitaTempo();
+        Debug.Log("Hai perso!");
+     
     }
 
     public void Lose()
     {
-        countdownTimer.PenalitaTempo();
         Debug.Log("Hai perso!");
+        manager.LoseGame();
     }
 }
