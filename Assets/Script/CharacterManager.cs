@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
@@ -6,10 +7,18 @@ using Random = UnityEngine.Random;
 
 public class CharacterManager : MonoBehaviour
 {
-    [SerializeField] GameObject character;
+    [SerializeField] List<GameObject> characters;
     [SerializeField] int quantity;
+    
+    [SerializeField] private float minMovementDistance;
+    [SerializeField] private float maxMovementDistance;
+    
+    [SerializeField] private float minMovementSpeed;
+    [SerializeField] private float maxMovementSpeed;
 
-    private static List<GameObject> _characters = new List<GameObject>();
+    [SerializeField] private float minTimeWait;
+    [SerializeField] private float maxTimeWait;
+    
     private static Camera _camera;
     private static Vector3 _border;
     
@@ -28,10 +37,10 @@ public class CharacterManager : MonoBehaviour
                 y = Random.Range(-_border.y, _border.y),
                 z = 0
             };
-            GameObject characterInstance = Instantiate(character, position, Quaternion.identity) as GameObject;
+            int index = Random.Range(0, characters.Count);
+            GameObject characterInstance = Instantiate(characters[index], position, Quaternion.identity) as GameObject;
             characterInstance.transform.parent = transform;
             MoveInstance(characterInstance);
-            _characters.Append(characterInstance);
         }
     }
 
@@ -43,24 +52,35 @@ public class CharacterManager : MonoBehaviour
 
     void MoveInstance(GameObject characterInstance)
     {
-        Vector3 newPosition = new Vector3
-        {
-            x = Random.Range(-_border.x, _border.x),
-            y = Random.Range(-_border.y, _border.y),
-            z = 0
-        };
-        characterInstance.transform.DOMove(newPosition, Random.Range(3.0f, 10.0f), true).OnComplete( 
-            () => WaitInstance(characterInstance)
-        );
+        // Generate random direction using angle
+        float randomAngle = Random.Range(0f, 360f) * Mathf.Deg2Rad;
+        Vector3 direction = new Vector3(Mathf.Cos(randomAngle), Mathf.Sin(randomAngle), 0);
         
-        DOTween.Play(characterInstance);
+        float movementDistance = Random.Range(minMovementDistance, maxMovementDistance);
+        Vector3 newPosition = direction * movementDistance;
+        
+        newPosition += characterInstance.transform.position;
+        
+        newPosition.x = Mathf.Clamp(newPosition.x, -_border.x, _border.x);
+        newPosition.y = Mathf.Clamp(newPosition.y, -_border.y, _border.y);
+        
+        characterInstance.transform.DOMove(newPosition, Random.Range(movementDistance/maxMovementSpeed, movementDistance/minMovementSpeed), false)
+            .OnStart(
+                () =>
+                {
+                    characterInstance.GetComponent<Animator>().SetBool("isWalking",true);
+                }
+            )
+            .OnComplete( 
+            () => {
+                StartCoroutine(WaitInstance(characterInstance));
+            });
     }
 
-    IEnumerable<WaitForSeconds> WaitInstance(GameObject characterInstance)
+    IEnumerator WaitInstance(GameObject characterInstance)
     {
-        Debug.Log("Waiting " + characterInstance.name);
-        DOTween.Kill(characterInstance);
-        yield return new WaitForSeconds(Random.Range(0.5f, 1.0f));
+        characterInstance.GetComponent<Animator>().SetBool("isWalking",false);
+        yield return new WaitForSeconds(Random.Range(minTimeWait, maxTimeWait));
         MoveInstance(characterInstance);
     }
 }

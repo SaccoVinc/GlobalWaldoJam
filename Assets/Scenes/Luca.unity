@@ -148,7 +148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b7aefdf113e224abfc60195ce1ead0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 1208754924561972634, guid: f70cda6bc6882a243857afc5de5b2bb0, type: 3}
+  characters:
+  - {fileID: 1208754924561972634, guid: 241c100252757734a8ee5c6d8fc77025, type: 3}
+  - {fileID: 1208754924561972634, guid: f70cda6bc6882a243857afc5de5b2bb0, type: 3}
   quantity: 60
 --- !u!4 &862471623
 Transform:
