@@ -182,8 +182,15 @@ MonoBehaviour:
   - {fileID: 281873718686116156, guid: ecf027e363db77d43b334811282f88c6, type: 3}
   - {fileID: 4784103628613621539, guid: de4e2479655e05443a499fbfec0d7b99, type: 3}
   - {fileID: 5744563787780099260, guid: ad6ead044f6e6514faa5bce1e3799564, type: 3}
-  AvailableColors:
-  - {r: 1, g: 1, b: 1, a: 1}
+  customMaterial: {fileID: 2100000, guid: 5ac12fb18dd16944396110abfef3dce6, type: 2}
+  AvailableColorsCloth:
+  - {r: 0.5396226, g: 0.16188672, b: 0.16188672, a: 0}
+  - {r: 0.4566037, g: 0.19211814, b: 0.2724559, a: 0}
+  - {r: 0.13668202, g: 0.2981131, b: 0.16681583, a: 0}
+  - {r: 0.18355995, g: 0.4792453, b: 0.23919405, a: 0}
+  - {r: 0.48334557, g: 0.4867924, b: 0.16808112, a: 0}
+  - {r: 0.71922994, g: 0.8037735, b: 0.19866854, a: 0}
+  AvailableColorsFace: []
 --- !u!212 &10258553902501114
 SpriteRenderer:
   m_ObjectHideFlags: 0
