@@ -1,8 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+
 public class GameManager : MonoBehaviour
 {
+    public GameObject WinPanel;
+    public GameObject LosePanel;
+    public GameObject Buttons;
     public void PlayGame()
     {
         SceneManager.LoadScene("Livello1");
@@ -15,11 +20,13 @@ public class GameManager : MonoBehaviour
 
     public void WinGame()
     {
-        SceneManager.LoadScene("SchermataWin");
+        WinPanel.SetActive(true);
+        Buttons.SetActive(true);
     }
 
     public void LoseGame()
     {
-        SceneManager.LoadScene("SchermataLose");
+        LosePanel.SetActive(true);
+        Buttons.SetActive(true);
     }
 }
