@@ -2,9 +2,16 @@ using UnityEngine;
 
 public class TriggerCamera : MonoBehaviour
 {
-    public GameManager manager;
-    public CountdownTimer countdownTimer;
+    private GameManager manager;
+    [SerializeField] private CountdownTimer countdownTimer;
     private bool targetInside = false;
+
+    private void Start()
+    {
+        manager = FindAnyObjectByType<GameManager>();
+
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Waldo"))

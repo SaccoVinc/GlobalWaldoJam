@@ -332,7 +332,7 @@ MonoBehaviour:
   LeftArm: {fileID: 8051424761926997709}
   RightArm: {fileID: 7723110876962325061}
   LeftLeg: {fileID: 8728104164404571902}
-  RightLeg: {fileID: 0}
+  RightLeg: {fileID: 495886129157247677}
   HeadSprites:
   - {fileID: -1071523155210718792, guid: f75b4751f5802cb4e9ce840ed37be235, type: 3}
   - {fileID: 3631311224200100833, guid: dda3db2a3ebdff94bab2058de8063915, type: 3}
