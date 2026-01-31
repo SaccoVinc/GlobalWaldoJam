@@ -40,7 +40,7 @@ public class CharacterManager : MonoBehaviour
                 y = Random.Range(-_border.y, _border.y),
                 z = 0
             };
-            int index = Random.Range(0, characters.Count);
+            int index = Random.Range(0, characters.Count());
             GameObject characterInstance = Instantiate(characters[index], position, Quaternion.identity) as GameObject;
             
             characterInstance.transform.parent = transform;

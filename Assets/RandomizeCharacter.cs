@@ -24,10 +24,12 @@ public class RandomizeCharacter : MonoBehaviour
     [Header("Color Cloth")]
     [SerializeField] Color[] AvailableColorsCloth;
     
-    
     [Header("Color Face")]
     [SerializeField] Color[] AvailableColorsFace;
 
+    [Header("Masks")]
+    [SerializeField] SpriteRenderer Mask;
+    [SerializeField] Sprite[] Masks;
     void Start()
     {
         Randomize();
@@ -87,6 +89,14 @@ public class RandomizeCharacter : MonoBehaviour
             RL.material.SetColor("_ReplacementColor", color);
             LA.material.SetColor("_ReplacementColor", color);
             RA.material.SetColor("_ReplacementColor", color);
+        }
+
+        if (Masks.Length > 0)
+        {
+            int rndMaskIndex = Random.Range(0, Masks.Length);
+            Sprite selectedMask = Instantiate(Masks[rndMaskIndex]);
+            
+            Mask.sprite = selectedMask;
         }
     }
 }
