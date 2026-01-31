@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: f3e69882e724d4a4999942bede0160c6
+guid: 6ca91e6ef138bc9428c79ba1a28870c9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8180350505819859085
-    second: Machera_0
+      213: -8531649804511879493
+    second: Mask1_0
+  - first:
+      213: -6640238246734613818
+    second: Mask1_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Machera_0
+      name: Mask1_0
       rect:
         serializedVersion: 2
-        x: 858
-        y: 1091
-        width: 531
-        height: 323
+        x: 867
+        y: 1394
+        width: 617
+        height: 352
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3779b6a6e8e897e80800000000000000
-      internalID: -8180350505819859085
+      spriteID: bbed90694bd799980800000000000000
+      internalID: -8531649804511879493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mask1_1
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 1289
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c2bb6ffe7229d3a0800000000000000
+      internalID: -6640238246734613818
       vertices: []
       indices: 
       edges: []
@@ -134,8 +159,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Machera_0: -8180350505819859085
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
