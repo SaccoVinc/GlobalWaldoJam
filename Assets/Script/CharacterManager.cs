@@ -10,6 +10,8 @@ public class CharacterManager : MonoBehaviour
     [SerializeField] List<GameObject> characters;
     [SerializeField] int quantity = 20;
     
+    [SerializeField] Material customMaterial;
+    
     [SerializeField] private float minMovementDistance = 1;
     [SerializeField] private float maxMovementDistance = 5;
     
@@ -42,6 +44,11 @@ public class CharacterManager : MonoBehaviour
             };
             int index = Random.Range(0, characters.Count);
             GameObject characterInstance = Instantiate(characters[index], position, Quaternion.identity) as GameObject;
+            
+            
+
+            SpriteRenderer spriteRenderer = characterInstance.GetComponent<SpriteRenderer>();
+            spriteRenderer.material = customMaterial;
             
             characterInstance.transform.parent = transform;
             MoveInstance(characterInstance);
