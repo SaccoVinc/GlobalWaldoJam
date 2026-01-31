@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 862471623}
   - component: {fileID: 862471622}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Character Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,7 +151,14 @@ MonoBehaviour:
   characters:
   - {fileID: 1208754924561972634, guid: 241c100252757734a8ee5c6d8fc77025, type: 3}
   - {fileID: 1208754924561972634, guid: f70cda6bc6882a243857afc5de5b2bb0, type: 3}
-  quantity: 60
+  quantity: 20
+  minMovementDistance: 1
+  maxMovementDistance: 5
+  minMovementSpeed: 1
+  maxMovementSpeed: 2
+  minTimeWait: 0.5
+  maxTimeWait: 2
+  padding: 5
 --- !u!4 &862471623
 Transform:
   m_ObjectHideFlags: 0

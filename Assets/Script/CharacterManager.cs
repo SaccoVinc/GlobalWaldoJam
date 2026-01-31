@@ -8,16 +8,18 @@ using Random = UnityEngine.Random;
 public class CharacterManager : MonoBehaviour
 {
     [SerializeField] List<GameObject> characters;
-    [SerializeField] int quantity;
+    [SerializeField] int quantity = 20;
     
-    [SerializeField] private float minMovementDistance;
-    [SerializeField] private float maxMovementDistance;
+    [SerializeField] private float minMovementDistance = 1;
+    [SerializeField] private float maxMovementDistance = 5
     
-    [SerializeField] private float minMovementSpeed;
-    [SerializeField] private float maxMovementSpeed;
+    [SerializeField] private float minMovementSpeed = 1;
+    [SerializeField] private float maxMovementSpeed = 2;
 
-    [SerializeField] private float minTimeWait;
-    [SerializeField] private float maxTimeWait;
+    [SerializeField] private float minTimeWait = 0.5f;
+    [SerializeField] private float maxTimeWait = 2;
+    
+    [SerializeField] private float padding = 5;
     
     private static Camera _camera;
     private static Vector3 _border;
@@ -28,6 +30,7 @@ public class CharacterManager : MonoBehaviour
     {
         _camera = Camera.main;
         _border = new Vector2(_camera.orthographicSize * _camera.aspect, _camera.orthographicSize);
+        _border -= new Vector3(padding, padding, 0.0f);
         
         for (int i = 0; i < quantity; i++)
         {
