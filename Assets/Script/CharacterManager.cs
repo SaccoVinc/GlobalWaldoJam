@@ -32,7 +32,8 @@ public class CharacterManager : MonoBehaviour
     {
         _camera = Camera.main;
         _border = new Vector2(_camera.orthographicSize * _camera.aspect, _camera.orthographicSize);
-        _border -= new Vector3(padding, padding, 0.0f);
+        _border.x -= padding;
+        _border.y -= padding;
         
         for (int i = 0; i < quantity; i++)
         {
