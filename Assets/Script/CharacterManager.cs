@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
@@ -31,7 +32,7 @@ public class CharacterManager : MonoBehaviour
             GameObject characterInstance = Instantiate(character, position, Quaternion.identity) as GameObject;
             characterInstance.transform.parent = transform;
             MoveInstance(characterInstance);
-            _characters.Append(characterInstance);
+            _characters.Add(characterInstance);
         }
     }
 
@@ -45,21 +46,22 @@ public class CharacterManager : MonoBehaviour
     {
         Vector3 newPosition = new Vector3
         {
-            x = Random.Range(-_border.x, _border.x),
-            y = Random.Range(-_border.y, _border.y),
+            x = Random.Range(-2, 2),
+            y = Random.Range(-2, 2),
             z = 0
         };
-        characterInstance.transform.DOMove(newPosition, Random.Range(3.0f, 10.0f), true).OnComplete( 
-            () => WaitInstance(characterInstance)
-        );
+        newPosition += characterInstance.transform.position;
+        characterInstance.transform.DOMove(newPosition, Random.Range(3.0f, 10.0f), false).OnComplete( 
+            () => {
+                DOTween.Kill(characterInstance);
+                StartCoroutine(WaitInstance(characterInstance));
+            });
         
         DOTween.Play(characterInstance);
     }
 
-    IEnumerable<WaitForSeconds> WaitInstance(GameObject characterInstance)
+    IEnumerator WaitInstance(GameObject characterInstance)
     {
-        Debug.Log("Waiting " + characterInstance.name);
-        DOTween.Kill(characterInstance);
         yield return new WaitForSeconds(Random.Range(0.5f, 1.0f));
         MoveInstance(characterInstance);
     }
