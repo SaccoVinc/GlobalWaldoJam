@@ -9,7 +9,8 @@ Shader "Custom/SaturationThreshold"
     
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
+        Tags { "RenderType"="Transparent" "Queue"="Transparent" "Cull"="Off"}
+        Cull Off
         LOD 100
 
         Pass
