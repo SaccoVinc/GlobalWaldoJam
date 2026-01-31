@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f3e69882e724d4a4999942bede0160c6
+guid: ec089162d2374f34095116b0a394e1ef
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8180350505819859085
-    second: Machera_0
+      213: -8531649804511879493
+    second: Mask1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Machera_0
+      name: Mask1_0
       rect:
         serializedVersion: 2
         x: 858
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3779b6a6e8e897e80800000000000000
-      internalID: -8180350505819859085
+      spriteID: bbed90694bd799980800000000000000
+      internalID: -8531649804511879493
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Machera_0: -8180350505819859085
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

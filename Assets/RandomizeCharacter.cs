@@ -18,9 +18,23 @@ public class RandomizeCharacter : MonoBehaviour
     [SerializeField] Sprite[] LegSprites;
     [SerializeField] Sprite[] BodySprites;
 
+<<<<<<< HEAD
     [Header("Color Settings")]
     [SerializeField] Color[] AvailableColors;
+=======
+    [Header("Color")]
+    [SerializeField] Material customMaterial;
+    
+    [Header("Color Cloth")]
+    [SerializeField] Color[] AvailableColorsCloth;
+    
+    [Header("Color Face")]
+    [SerializeField] Color[] AvailableColorsFace;
+>>>>>>> f46bce2e9655c5d003e82e2272af71a5245749d0
 
+    [Header("Masks")]
+    [SerializeField] SpriteRenderer Mask;
+    [SerializeField] Sprite[] Masks;
     void Start()
     {
         Randomize();
@@ -65,6 +79,14 @@ public class RandomizeCharacter : MonoBehaviour
 
             LeftLeg.color = randomColor;
             RightLeg.color = randomColor;
+        }
+
+        if (Masks.Length > 0)
+        {
+            int rndMaskIndex = Random.Range(0, Masks.Length);
+            Sprite selectedMask = Instantiate(Masks[rndMaskIndex]);
+            
+            Mask.sprite = selectedMask;
         }
     }
 }
