@@ -182,8 +182,23 @@ MonoBehaviour:
   - {fileID: 281873718686116156, guid: ecf027e363db77d43b334811282f88c6, type: 3}
   - {fileID: 4784103628613621539, guid: de4e2479655e05443a499fbfec0d7b99, type: 3}
   - {fileID: 5744563787780099260, guid: ad6ead044f6e6514faa5bce1e3799564, type: 3}
-  AvailableColors:
-  - {r: 1, g: 1, b: 1, a: 1}
+  customMaterial: {fileID: 2100000, guid: 5ac12fb18dd16944396110abfef3dce6, type: 2}
+  AvailableColorsCloth:
+  - {r: 0.5245282, g: 0.17715193, b: 0.17715193, a: 0}
+  - {r: 0.5018867, g: 0.22253467, b: 0.22253467, a: 0}
+  - {r: 0.5999999, g: 0.45048037, b: 0.20264143, a: 0}
+  - {r: 0.7433963, g: 0.6346207, b: 0.32961908, a: 0}
+  - {r: 0.58346033, g: 0.6679245, b: 0.2608686, a: 0}
+  - {r: 0.3395952, g: 0.5245282, b: 0.1256888, a: 0}
+  AvailableColorsFace:
+  - {r: 0.335849, g: 0.335849, b: 0.335849, a: 0}
+  - {r: 0.4867924, g: 0.47301525, b: 0.47301525, a: 0}
+  - {r: 0.5245282, g: 0.5245282, b: 0.5245282, a: 0}
+  Mask: {fileID: 4366491923374841896}
+  Masks:
+  - {fileID: -8531649804511879493, guid: 9a0fdbf764fef46468f071a6b866a611, type: 3}
+  - {fileID: -306170843243513345, guid: aafdddc5c1c412b45bfcc3e0744f3d2f, type: 3}
+  - {fileID: -6947026691842227130, guid: 0e2e7ae5ee47bce49be0420be5ff7a71, type: 3}
 --- !u!212 &10258553902501114
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -324,7 +339,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
 --- !u!61 &5170017707550772818

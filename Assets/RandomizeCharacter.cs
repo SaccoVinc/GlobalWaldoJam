@@ -18,9 +18,18 @@ public class RandomizeCharacter : MonoBehaviour
     [SerializeField] Sprite[] LegSprites;
     [SerializeField] Sprite[] BodySprites;
 
-    [Header("Color Settings")]
-    [SerializeField] Color[] AvailableColors;
+    [Header("Color")]
+    [SerializeField] Material customMaterial;
+    
+    [Header("Color Cloth")]
+    [SerializeField] Color[] AvailableColorsCloth;
+    
+    [Header("Color Face")]
+    [SerializeField] Color[] AvailableColorsFace;
 
+    [Header("Masks")]
+    [SerializeField] SpriteRenderer Mask;
+    [SerializeField] Sprite[] Masks;
     void Start()
     {
         Randomize();
@@ -53,18 +62,41 @@ public class RandomizeCharacter : MonoBehaviour
             RightLeg.sprite = selectedLeg;
         }
 
-        if (AvailableColors.Length > 0)
+        if (AvailableColorsCloth.Length > 0)
         {
-            Color randomColor = AvailableColors[Random.Range(0, AvailableColors.Length)];
+            SpriteRenderer spriteRenderer = Body.GetComponent<SpriteRenderer>();
+            spriteRenderer.material = customMaterial;
+            
+            spriteRenderer.material.SetColor("_ReplacementColor", AvailableColorsCloth[Random.Range(0, AvailableColorsCloth.Length)]);
+        }
+        if (AvailableColorsFace.Length > 0)
+        {
+            SpriteRenderer spriteRenderer = Head.GetComponent<SpriteRenderer>();
+            spriteRenderer.material = customMaterial;
+            SpriteRenderer LL = LeftLeg.GetComponent<SpriteRenderer>();
+            LL.material = customMaterial;
+            SpriteRenderer RL = RightLeg.GetComponent<SpriteRenderer>();
+            RL.material = customMaterial;
+            SpriteRenderer LA = LeftArm.GetComponent<SpriteRenderer>();
+            LA.material = customMaterial;
+            SpriteRenderer RA = RightArm.GetComponent<SpriteRenderer>();
+            RA.material = customMaterial;
 
-            Head.color = randomColor;
-            Body.color = randomColor;
+            Color color = AvailableColorsFace[Random.Range(0, AvailableColorsFace.Length)];
+            
+            spriteRenderer.material.SetColor("_ReplacementColor", color);
+            LL.material.SetColor("_ReplacementColor", color);
+            RL.material.SetColor("_ReplacementColor", color);
+            LA.material.SetColor("_ReplacementColor", color);
+            RA.material.SetColor("_ReplacementColor", color);
+        }
 
-            LeftArm.color = randomColor;
-            RightArm.color = randomColor;
-
-            LeftLeg.color = randomColor;
-            RightLeg.color = randomColor;
+        if (Masks.Length > 0)
+        {
+            int rndMaskIndex = Random.Range(0, Masks.Length);
+            Sprite selectedMask = Instantiate(Masks[rndMaskIndex]);
+            
+            Mask.sprite = selectedMask;
         }
     }
 }
